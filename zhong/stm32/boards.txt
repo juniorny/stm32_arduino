@@ -1,0 +1,44 @@
+
+menu.upload_method=Upload method
+
+stm32f103rc.name=STM32F103RCT6
+
+stm32f103rc.vid.0=0x0001
+stm32f103rc.pid.0=0x0002
+
+
+stm32f103rc.build.core=arduino
+stm32f103rc.build.mcu=cortex-m3
+stm32f103rc.build.board=STM32f103RC
+stm32f103rc.build.series=STM32F1xx
+stm32f103rc.build.product_line=STM32F103xE
+stm32f103rc.build.variant=STM32f103RC
+stm32f103rc.build.extra_flags=-D{build.product_line} {build.enable_usb} {build.xSerial}
+stm32f103rc.build.cmsis_lib_gcc=arm_cortexM3l_math
+stm32f103rc.build.f_cpu=72000000L
+stm32f103rc.build.ldscript=ldscript.ld
+
+
+#flash size：256k
+stm32f103rc.upload.maximum_size=262144
+#ram size：20k
+stm32f103rc.upload.maximum_size=20480
+
+#for jlink_upload to select mcu
+stm32f103rc.upload.uploadadr=0x08000000
+stm32f103rc.upload.vect=0x08000000
+stm32f103rc.upload.device=STM32F103RC
+stm32f103rc.upload.altID=CH340
+stm32f103rc.upload.usbID=1EAF:0003
+
+
+
+# Upload menu
+stm32f103rc.menu.upload_method.serialMethod=Serial
+stm32f103rc.menu.upload_method.serialMethod.upload.tool=serial_upload
+stm32f103rc.menu.upload_method.serialMethod.upload.protocol=maple_serial
+
+
+stm32f103rc.menu.upload_method.jLinkMethod=JLink
+stm32f103rc.menu.upload_method.jLinkMethod.upload.tool=jlink_upload
+stm32f103rc.menu.upload_method.jLinkMethod.upload.protocol=jlink
